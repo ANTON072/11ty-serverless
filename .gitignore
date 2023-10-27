@@ -158,3 +158,6 @@ Temporary Items
 .apdisk
 
 build/
+
+netlify/functions/serverless/**
+!netlify/functions/serverless/index.js

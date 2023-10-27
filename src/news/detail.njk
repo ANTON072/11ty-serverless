@@ -4,7 +4,9 @@ pagination:
   size: 1
   alias: news
 layout: layout
-permalink: "news/{{ news.id }}/index.html"
+permalink:
+  build: "/news/{{ news.id }}/index.html"
+  serverless: "/preview/news/{{ news.id }}/"
 ---
 
 <h1>{{ news.title }}</h1>
