@@ -2,4 +2,10 @@
 layout: layout
 ---
 
-<h1>Hello World.</h1>
+<h1>11ty Serverless.</h1>
+
+<ul>
+  {%- for post in microcms.news -%}
+  <li>{{ post.title }}</li>
+  {%- endfor -%}
+</ul>
