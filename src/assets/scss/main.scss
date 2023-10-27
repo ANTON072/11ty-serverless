@@ -1,0 +1,9 @@
+body {
+  background: #ccc;
+}
+
+.hoge {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 50px 1fr 50px;
+}
