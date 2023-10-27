@@ -6,6 +6,6 @@ layout: layout
 
 <ul>
   {%- for post in microcms.news -%}
-  <li>{{ post.title }}</li>
+  <li><a href="/news/{{ post.id }}">{{ post.title }}</a></li>
   {%- endfor -%}
 </ul>

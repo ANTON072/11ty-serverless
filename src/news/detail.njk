@@ -1,0 +1,12 @@
+---
+pagination:
+  data: microcms.news
+  size: 1
+  alias: news
+layout: layout
+permalink: "news/{{ news.id }}/index.html"
+---
+
+<h1>{{ news.title }}</h1>
+
+<div>{{ news.content }}</div>
