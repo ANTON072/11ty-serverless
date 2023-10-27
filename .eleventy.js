@@ -14,7 +14,7 @@ module.exports = (config) => {
 
   config.addPlugin(EleventyServerlessBundlerPlugin, {
     name: "serverless",
-    functionsDir: "./netlify/functions/serverless",
+    functionsDir: "./netlify/functions",
   });
 
   return {

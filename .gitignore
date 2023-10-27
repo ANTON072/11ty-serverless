@@ -159,5 +159,5 @@ Temporary Items
 
 build/
 
-netlify/functions/serverless/**
-!netlify/functions/serverless/index.js
+netlify/functions/**
+!netlify/functions/index.js

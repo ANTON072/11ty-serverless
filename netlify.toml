@@ -1,13 +1,13 @@
 [[redirects]]
 from = "/preview/news/uc4xlkuon/"
-to = "/.netlify/functions/serverless"
+to = "/.netlify/functions"
 status = 200
 force = true
 _generated_by_eleventy_serverless = "serverless"
 
 [[redirects]]
 from = "news/uc4xlkuon/preview/"
-to = "/.netlify/functions/serverless"
+to = "/.netlify/functions"
 status = 200
 force = true
 _generated_by_eleventy_serverless = "serverless"
