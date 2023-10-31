@@ -14,17 +14,17 @@ const client = createClient({
   apiKey: MICRO_CMS_API_KEY,
 });
 
-const getAllPosts = async (endpoint) => {
+const getAllPosts = async ({ api, draftKey }) => {
   const allPosts = [];
   let currentOffset = 0;
   const _limit = 100;
 
   while (true) {
     const response = await client.get({
-      endpoint,
-      queries: { offset: currentOffset, limit: _limit },
+      endpoint: api,
+      queries: { offset: currentOffset, limit: _limit, draftKey },
     });
-    // console.log("response", response);
+
     const { totalCount, contents, offset, limit } = response;
     allPosts.push(...contents);
 
@@ -42,10 +42,16 @@ const getAllPosts = async (endpoint) => {
   return sorted;
 };
 
-module.exports = async () => {
-  const news = await getAllPosts("news");
-  // console.log("news", news);
+module.exports = async ({ eleventy }) => {
+  const isServerless = eleventy.env.isServerless;
+  const draftKey = isServerless
+    ? eleventy.serverless?.query?.draftKey
+    : undefined;
 
+  const news = await getAllPosts({
+    api: "news",
+    draftKey,
+  });
   return {
     news,
   };
